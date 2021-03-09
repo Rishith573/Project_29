@@ -11,10 +11,19 @@ var box17, box18, box19, box20, box21, box22, box23, box24, box25;
 
 var ground1, ground2;
 
+var hexa, chain;
+
 function setup() {
   createCanvas(1250,600);
   engine = Engine.create();
   world = engine.world;
+
+// creating polygon
+  hexa = Bodies.circle(50, 200, 20);
+  World.add(world, hexa);
+
+  chain = new Chain(hexa, {x:150, y:200});
+
 // creating ground1
   ground1 = new Ground(580, 450, 320, 20);
 
