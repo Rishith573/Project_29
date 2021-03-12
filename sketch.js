@@ -20,6 +20,7 @@ function setup() {
 
 // creating polygon
   hexa = Bodies.circle(50, 200, 20);
+  hexa.shapeColor = "blue"
   World.add(world, hexa);
 
   chain = new Chain(hexa, {x:150, y:200});
@@ -28,43 +29,46 @@ function setup() {
   ground1 = new Ground(580, 450, 320, 20);
 
 // first layer of ground1
-  box1 = new Box(460, 400, 40, 40);
-  box2 = new Box2(500, 400, 40, 40);
-  box3 = new Box(540, 400, 40, 40);
-  box4 = new Box2(580, 400, 40, 40);
-  box5 = new Box(620, 400, 40, 40);
-  box6 = new Box2(660, 400, 40, 40);
-  box7 = new Box(700, 400, 40, 40);
+  box1 = new Box(460, 500, 40, 40);
+  box2 = new Box2(500, 500, 40, 40);
+  box3 = new Box(540, 500, 40, 40);
+  box4 = new Box2(580, 500, 40, 40);
+  box5 = new Box(620, 500, 40, 40);
+  box6 = new Box2(660, 500, 40, 40);
+  box7 = new Box(700, 500, 40, 40);
   
 // second layer of ground1
-  box8 = new Box(500, 300, 40, 40);
-  box9 = new Box2(540, 300, 40, 40);
-  box10 = new Box(580, 300, 40, 40);
-  box11 = new Box2(620, 300, 40, 40);
-  box12 = new Box(660, 300, 40, 40);
+  box8 = new Box(500, 400, 40, 40);
+  box9 = new Box2(540, 400, 40, 40);
+  box10 = new Box(580, 400, 40, 40);
+  box11 = new Box2(620, 400, 40, 40);
+  box12 = new Box(660, 400, 40, 40);
 
 // third layer of ground1
-  box13 = new Box(540, 200, 40, 40);
-  box14 = new Box2(580, 200, 40, 40);
-  box15 = new Box(620, 200, 40, 40)
+  box13 = new Box(540, 300, 40, 40);
+  box14 = new Box2(580, 300, 40, 40);
+  box15 = new Box(620, 300, 40, 40)
 
 // last layer for ground1
-  box16 = new Box(580, 100, 40, 40);
+  box16 = new Box(580, 200, 40, 40);
 
 // creating ground2
   ground2 = new Ground(1000, 210, 235, 20)
 
 // first layer of ground2
-  box17 = new Box3(915, 200, 40, 40);
-  box18 = new Box4(955, 200, 40, 40);
-  box19 = new Box3(995, 200, 40, 40);
-  box20 = new Box4(1035, 200, 40, 40);
-  box21 = new Box3(1075, 200, 40, 40);
+  box17 = new Box3(915, 300, 40, 40);
+  box18 = new Box4(955, 300, 40, 40);
+  box19 = new Box3(995, 300, 40, 40);
+  box20 = new Box4(1035, 300, 40, 40);
+  box21 = new Box3(1075, 300, 40, 40);
 
-// secong layer of ground2
-  box22 = new Box3(955, 100, 40, 40);
-  box23 = new Box4(995, 100, 40, 40);
-  box24 = new Box3(1035, 100, 40, 40);
+// second layer of ground2
+  box22 = new Box3(955, 200, 40, 40);
+  box23 = new Box4(995, 200, 40, 40);
+  box24 = new Box3(1035, 200, 40, 40);
+
+// last layer of ground2
+  box25 = new Box3(995, 100, 40, 40)
   
 }
 
@@ -118,6 +122,6 @@ function draw() {
   box24.display();
 
 // displaying last layer of ground2
-  //box25.display();
+  box25.display();
   
 }

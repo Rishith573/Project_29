@@ -1,10 +1,10 @@
-class SlingShot{
+class Chain{
     constructor(bodyA, pointB){
         var options = {
             bodyA: bodyA,
             pointB: pointB,
             stiffness: 0.04,
-            length: 2
+            length: 10
         }
         this.pointB = pointB
         this.chain = Constraint.create(options);
@@ -16,8 +16,6 @@ class SlingShot{
     }
 
     display(){
-        image(this.sling1, 200, 20);
-        image(this.sling2, 170, 20);
         if(this.chain.bodyA){
             var pointA = this.chain.bodyA.position;
             var pointB = this.pointB;
