@@ -27,7 +27,7 @@ function setup() {
   world = engine.world;
 
 // creating polygon
-  polygon = Bodies.circle(150, 200, 20, {density : 1.5});
+  polygon = Bodies.circle(150, 200, 20, {density : 1});
   //hexa.shapeColor = "blue"
   World.add(world, polygon);
 
@@ -84,7 +84,7 @@ function setup() {
 
 function draw() {
 // set the background to black
-  background(0);
+  background("lightgrey");
 
   imageMode(CENTER);
   image(polygonImg, polygon.position.x, polygon.position.y, 40, 40);

@@ -19,7 +19,7 @@ class Chain{
         if(this.chain.bodyA){
             var pointA = this.chain.bodyA.position;
             var pointB = this.pointB;
-            stroke(48, 22, 8)
+            stroke("red")
             strokeWeight(4);
             line(pointA.x, pointA.y, pointB.x, pointB.y)
             
