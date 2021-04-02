@@ -11,22 +11,32 @@ var box17, box18, box19, box20, box21, box22, box23, box24, box25;
 
 var ground1, ground2;
 
-var hexa, chain;
+var polygon, polygonImg, chain;
+
+function preload() {
+  polygonImg = loadImage("polygon.png")
+}
 
 function setup() {
   createCanvas(1250,600);
   engine = Engine.create();
+
+// run the engine
+  Engine.run(engine);
+
   world = engine.world;
 
 // creating polygon
-  hexa = Bodies.circle(50, 200, 20);
-  hexa.shapeColor = "blue"
-  World.add(world, hexa);
+  polygon = Bodies.circle(150, 200, 20, {density : 1.5});
+  //hexa.shapeColor = "blue"
+  World.add(world, polygon);
 
-  chain = new Chain(hexa, {x:150, y:200});
+  chain = new Chain(polygon, {x:175, y:200});
+
+  
 
 // creating ground1
-  ground1 = new Ground(580, 450, 320, 20);
+  ground1 = new Ground(580, 550, 320, 20);
 
 // first layer of ground1
   box1 = new Box(460, 500, 40, 40);
@@ -53,7 +63,7 @@ function setup() {
   box16 = new Box(580, 200, 40, 40);
 
 // creating ground2
-  ground2 = new Ground(1000, 210, 235, 20)
+  ground2 = new Ground(1000, 410, 235, 20)
 
 // first layer of ground2
   box17 = new Box3(915, 300, 40, 40);
@@ -76,12 +86,8 @@ function draw() {
 // set the background to black
   background(0);
 
-// run the engine
-  Engine.run(engine);
-
-//for refering x and y coordinates of the mouse
-  textSize(20)
-  text("score:" + mouseX + "," + mouseY, 100, 100)
+  imageMode(CENTER);
+  image(polygonImg, polygon.position.x, polygon.position.y, 40, 40);
 
 // displaying the ground1
   ground1.display();
@@ -123,5 +129,15 @@ function draw() {
 
 // displaying last layer of ground2
   box25.display();
+
+  chain.display();
   
+}
+
+function mouseDragged(){
+  Matter.Body.setPosition(polygon, {x: mouseX, y: mouseY});
+}
+
+function mouseReleased(){
+  chain.fly();
 }

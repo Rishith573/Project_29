@@ -4,7 +4,7 @@ class Chain{
             bodyA: bodyA,
             pointB: pointB,
             stiffness: 0.04,
-            length: 10
+            length: 40
         }
         this.pointB = pointB
         this.chain = Constraint.create(options);
@@ -22,6 +22,7 @@ class Chain{
             stroke(48, 22, 8)
             strokeWeight(4);
             line(pointA.x, pointA.y, pointB.x, pointB.y)
+            
         }
     }
     
